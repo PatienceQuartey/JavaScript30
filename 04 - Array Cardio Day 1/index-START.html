@@ -82,6 +82,14 @@
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live all together?
 
+    let totalYears = inventors.reduce(
+      function(accumulatedNumber, inventor){
+        let total = accumulatedNumber + (inventor.passed - inventor.year)
+        return total
+      }, 0 //inital value
+    )
+    console.log(totalYears)
+/*
     let birthYear = inventors.map(findBirthYear)
     function findBirthYear(birth){
       return birth.year
@@ -156,6 +164,7 @@
       }
     )
     console.log(sortLastName)
+    */
 
    
 

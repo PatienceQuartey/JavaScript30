@@ -46,7 +46,7 @@
     let inventrFirstLastName = inventors.map(inventrFN)
 
     function inventrFN (name){
-      return [name.first, name.last]
+      return [name.first, name.last].join(" ")
     }
 
     console.log(inventrFirstLastName)

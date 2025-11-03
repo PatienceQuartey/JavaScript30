@@ -43,10 +43,11 @@
 
     // Array.prototype.map()
     // 2. Give us an array of the inventors first and last names
-    let inventrFirstLastName = inventors.map(
-      name => name.first
-    )
- 
+    let inventrFirstLastName = inventors.map(inventrFN)
+
+    function inventrFN (name){
+      return [name.first, name.last]
+    }
 
     console.log(inventrFirstLastName)
 

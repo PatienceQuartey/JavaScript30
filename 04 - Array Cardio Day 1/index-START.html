@@ -89,7 +89,7 @@
       }, 0 //inital value
     )
     console.log(totalYears)
-/*
+
     let birthYear = inventors.map(findBirthYear)
     function findBirthYear(birth){
       return birth.year
@@ -164,13 +164,26 @@
       }
     )
     console.log(sortLastName)
-    */
+    
 
    
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+
+    let travel = data.reduce(
+      function(mode, appearance){
+        if(!mode[appearance]){
+          mode[appearance] = 0
+        }
+        mode[appearance]++;
+        return mode;
+      }, {}
+
+    )
+
+    console.log(travel)
 
   </script>
 </body>

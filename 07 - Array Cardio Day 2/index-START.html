@@ -27,15 +27,82 @@
 
     // Some and Every Checks
     // Array.prototype.some() // is at least one person 19 or older?
+    // Using some() method for ARRAYS will output information if at least ONE element meets what you are looking for.
+    let nineteenAndOver = people.some(
+      function(person){
+        let currentYear = (new Date()).getFullYear(); // THIS WILLL OUTPUT THE FULL YEAR OF A SPECIFIED DATE
+        if(currentYear - person.year >= 19){
+          return true
+        }
+      }
+    )
+
+    console.log(nineteenAndOver)
+
+
+
     // Array.prototype.every() // is everyone 19 or older?
+    //Using the every() method will output TRUE only if ALL elements meet what you are looking for.
+    let allPeople = people.every(
+      function(person){
+        let currentYear = (new Date()).getFullYear();
+        if(currentYear - person.year >= 19){
+          return true
+        } else{
+          return false
+        }
+      }
+    )
+
+    console.log(allPeople)
+
 
     // Array.prototype.find()
     // Find is like filter, but instead returns just the one you are looking for
     // find the comment with the ID of 823423
+    //Using the find() method will search your array for the FIRST element that satisfy your condition and output this
+    
+    let theComment = comments.find(
+      function(theComment){
+        if (theComment.id === 823423){
+          return true
+        }
+
+      }
+    )
+
+    console.log(theComment)
+
+    // EXAMPLE OF AN ARROW FUNCTION FOR THIS TASK
+    // const theComment = comments.find(theComment => 823423)
+    //console.log(theComment)
+
+
+
 
     // Array.prototype.findIndex()
     // Find the comment with this ID
-    // delete the comment with the ID of 823423
+    //Using findIndex() method will provide you with the FIRST index in the array that meets the condition
+
+    let locateTheIndex = comments.findIndex(
+      function(theIndex){
+        if(theIndex.id === 823423){
+          return true
+        }
+        
+      }
+    )
+    
+    
+    // ARROW FUNCTION - let locateTheIndex = comments.findIndex(theIndex => theIndex.id === 823423)
+    console.log(locateTheIndex)
+
+        // delete the comment with the ID of 823423
+        //ELEMTS IN AN ARRAY CAN BE DELETED USING THE splice() METHOD
+
+        comments.splice(locateTheIndex, 1)
+        console.log(comments)// shows the COMMENTS array without the spliced element.
+    
 
   </script>
 </body>
